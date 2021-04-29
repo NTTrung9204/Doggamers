@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+	<title>2048</title>
+	<style>
+		.tren {
+    	float: left;
+    	background-color: white;
+   	 	color : black;
+    	height: 50%;
+    	width: 99.5%;
+    	border-radius: 10px;
+		border: 3px dotted #b1154a;
+		line-height: 1.4;
+  		}
+		.header {
+  		display: flex;
+  		background-color: white;
+  		width: 100%;
+  		height: 90px;
+		}
+		
+		.dangky input[type="button"] {
+  		background-color: #DD0000;
+  		color: white;
+  		height: 43px;
+  		border-radius: 10px 10px 10px 10px;
+  		outline: none;
+  		border: none;
+		}
+		.choigame input[type="button"] {
+  		background-color:#DD0000;
+  		color: white;
+  		height: 40px;
+  		outline: none;
+  		border: none;
+		border: 3px solid #b1154a;
+		}
+		.choigame input[type="button"]:hover {
+ 		background-color: #BB0000;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Chi Tiết Game" style="font-weight:bold"></center></a>
+        </div>
+		<h4><center>2048 là một trò chơi giải đố do tác giả Gabriele Cirulli, một lập trình viên web trẻ 19 tuổi người Ý, tạo ra vào tháng 3 năm 2014. Mục tiêu của trò chơi là trượt các khối vuông có mang số trên một lưới vuông để kết hợp chúng lại và tạo ra khối vuông có giá trị 2048.<br>
+	Đây có thể xem như một dạng trò chơi giải đố trượt khối vuông và rất giống với ứng dụng Threes! ra mắt một tháng trước đó. Cirulli tạo ra trò chơi này chỉ trong một cuối tuần để tự kiểm nghiệm xem mình có thể viết một trò chơi từ bản phác thảo hay không.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Hướng Dẫn Chơi" style="font-weight:bold"></center></a>
+        </div>
+	<h4><center>2048 chơi trên một lưới vuông 4×4. Mỗi lần di chuyển là một lượt, người chơi sử dụng các phím mũi tên và các khối vuông sẽ trượt theo một trong bốn hướng tương ứng (lên, xuống, trái, phải). Mỗi lượt có một khối có giá trị 2 hoặc 4 sẽ xuất hiện ngẫu nhiên ở một ô trống trên lưới.<br> Các khối vuông trượt theo hướng chỉ định cho đến khi chạm đến biên của lưới hoặc chạm vào khối vuông khác. Nếu hai khối vuông có cùng giá trị chạm vào nhau, chúng sẽ kết hợp lại thành một khối vuông có giá trị bằng tổng giá trị hai khối vuông đó (giá trị gấp đôi).<br>
+		
+	
+		Khi người chơi tạo được ô vuông có giá trị 2048 thì thắng cuộc. Lúc này người chơi có thể lựa chọn tiếp tục chơi để đạt các giá trị cao hơn 2048. Khi không còn nước đi hợp lệ (không còn ô trống và các ô kề nhau đều khác giá trị) thì trò chơi kết thúc.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	{% if user.username %}
+	<div class="choigame">
+		<a href="/game1"><center><input type="button" name="" value="Click Để Chơi Game" style="font-weight:bold"></center></a>
+	</div>
+	{% else %}
+	<div class="choigame">
+		<center><input type="button" name="" id="btn" value="Click Để Chơi Game" style="font-weight:bold"></center>
+        <script language="javascript">
+            var button = document.getElementById("btn");
+            button.onclick = function(){
+                alert("Bạn cần có một tài khoản để chơi game !!!");
+            }
+        </script>
+	</div>
+	{% endif %}
+	
+</body>
+</html>

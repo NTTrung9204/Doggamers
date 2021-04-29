@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+	<title>Bomb</title>
+	<style>
+		.tren {
+    	float: left;
+    	background-color: white;
+   	 	color : black;
+    	height: 50%;
+    	width: 99.5%;
+    	border-radius: 10px;
+		border: 3px dotted #b1154a;
+		line-height: 1.4;
+  		}
+		.header {
+  		display: flex;
+  		background-color: white;
+  		width: 100%;
+  		height: 90px;
+		}
+		
+		.dangky input[type="button"] {
+  		background-color: #DD0000;
+  		color: white;
+  		height: 43px;
+  		border-radius: 10px 10px 10px 10px;
+  		outline: none;
+  		border: none;
+		}
+		.choigame input[type="button"] {
+  		background-color:#DD0000;
+  		color: white;
+  		height: 40px;
+  		outline: none;
+  		border: none;
+		border: 3px solid #b1154a;
+		}
+		.choigame input[type="button"]:hover {
+ 		background-color: #BB0000;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Chi Tiết Game" style="font-weight:bold"></center></a>
+        </div>
+		<h4><center>Dò mìn hay gỡ boom là một trò chơi trên máy tính dành cho một người chơi. <br> Trò chơi được xây dựng như một chương trình giải trí cài đặt trên hệ điều hành Microsoft Windows. <br>Tuy vậy, nó được cho là bắt nguồn từ trò chơi Cube (năm 1973)
+
+            Hiện nay trò chơi Dò mìn rất phổ biến.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Hướng Dẫn Chơi" style="font-weight:bold"></center></a>
+        </div>
+	<h4><center>Người chơi khởi đầu với một bảng ô vuông trống thể hiện "bãi mìn".<br>
+        Click chuột vào một ô vuông trong bảng. Nếu không may trúng phải ô có mìn (điều này thường xảy ra với người mới chơi) thì trò chơi kết thúc.<br> Trường hợp khác là ô đó không có mìn và một vùng các ô sẽ được mở ra cùng với những con số. Số trên một ô là lượng mìn trong 8 ô nằm quanh với ô đó.
+        Nếu chắc chắn một ô có mìn, người chơi đánh dấu vào ô đó bằng hình lá cờ (click chuột phải).<br>
+        Khi 8 ô lân cận trong một số đã có đủ số mìn mà vẫn còn các ô khác thì những ô đó không có mìn <br>
+        Trò chơi kết thúc với phần thắng dành cho người chơi nếu mở được tất cả các ô không có mìn. <br>
+        Trò chơi chia làm ba trình độ: <br>
+        
+        Dễ (beginner): bảng ô vuông 8 × 8 (9×9 từ bản Microsoft Windows XP trở đi) trên đó rải 10 quả mìn <br>
+        Trung bình (intermediate): bảng ô vuông 16 × 16 trên đó rải 40 quả mìn <br>
+        Khó (expert): bảng ô vuông 30 × 16 trên đó rải 99 quả mìn <br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	{% if user.username %}
+	<div class="choigame">
+		<a href="/game10"><center><input type="button" name="" value="Click Để Chơi Game" style="font-weight:bold"></center></a>
+	</div>
+	{% else %}
+	<div class="choigame">
+		<center><input type="button" name="" id="btn" value="Click Để Chơi Game" style="font-weight:bold"></center>
+        <script language="javascript">
+            var button = document.getElementById("btn");
+            button.onclick = function(){
+                alert("Bạn cần có một tài khoản để chơi game !!!");
+            }
+        </script>
+	</div>
+	{% endif %}
+	
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="/static/css/css.css" type="text/css">
+   <link rel="shortcut icon" href="/static/images/hinh2.png">
+   <title>Y9 Games</title>
+ 
+</head>
+<body>
+    <header class="header">
+        <div class="header1">
+          <div class="logo">
+            <a href="/contact"><img src="/static/images/hinh2.png" alt="" style="width:110px ; padding-left:50px ; padding-top:0px ; padding-left:50px"></a>
+          </div>
+          <div class="mainsearch">
+            <div class="search">
+              <input type="text" name="" placeholder="Tìm kiếm trò chơi" style="font-weight:bold">
+              <button type="button" name="button"><img src="/static/images/hinh3.png" style="width:14px"></button>
+            </div>
+          </div>
+          {% if user.username %}
+          <div class="dangky">
+            <a><input type="button" name="" value="Xin chào {{user.username}}" style="font-weight:bold"></a>
+          </div>
+          <div class="dangnhap">
+            <a href="/logout"><input type="button" name="" value="Đăng xuất" style="font-weight:bold"></a>
+          </div>
+          {% else %}
+          <div class="dangky">
+            <a href="/register"><input type="button" name="" value="Đăng ký" style="font-weight:bold"></a>
+          </div>
+          <div class="dangnhap">
+            <a href="/login"><input type="button" name="" value="Đăng nhập" style="font-weight:bold"></a>
+          </div>
+          {% endif %}
+        </div>
+      </header>
+      <div class="body">
+      
+        <div class="container">
+          <div class="right">
+            <div class="top">
+              <a href="/about2048"><img src="/static/images/hinh5.png" alt=""></a>
+              <div class="name">
+                <a href="/about2048">2048</a>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="top">
+              <a href="/aboutFlappybird"><img src="/static/images/hinh6.png" alt=""></a>
+              <div class="name">
+                <a href="/aboutFlappybird">Flappy bird</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right">
+            <div class="top">
+              <a href="/aboutTrex"><img src="/static/images/hinh7.png" alt=""></a>
+              <div class="name">
+                <a href="/aboutTrex">T-rex</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="right">
+            <div class="top">
+              <a href="/aboutSnake"><img src="/static/images/hinh8.jpg" alt=""></a>
+              <div class="name">
+                <a href="/aboutSnake">Snake</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="top">
+              <a href="/aboutPuzzles"><img src="/static/images/hinh9.jpg" alt=""></a>
+              <div class="name">
+                <a href="/aboutPuzzles">Puzzles</a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="container">
+            <div class="right">
+              <div class="top">
+                <a href="/aboutHexGL"><img src="/static/images/hinh10.png" alt=""></a>
+                <div class="name">
+                  <a href="/aboutHexGL">hexGL</a>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="top">
+                <a href="/aboutHextris"><img src="/static/images/hinh11.png" alt=""></a>
+                <div class="name">
+                  <a href="/aboutHextris">Hextris</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="right">
+              <div class="top">
+                <a href="/aboutMario"><img src="/static/images/hinh12.jpg" alt=""></a>
+                <div class="name">
+                  <a href="/aboutMario">Mario</a>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="right">
+              <div class="top">
+                <a href="/aboutAstray"><img src="/static/images/hinh13.png" alt=""></a>
+                <div class="name">
+                  <a href="/aboutAstray">Astray</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="right">
+              <div class="top">
+                <a href="/aboutBomb"><img src="/static/images/hinh14.jpg" alt=""></a>
+                <div class="name">
+                  <a href="/aboutBomb">Bomb</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      
+
+        
+      
+      
+        
+
+
+
+
+
+      
+        
+
+
+
+
+      </div>
+      {% block content %}
+  
+      {% endblock %}
+</body>
+</html>

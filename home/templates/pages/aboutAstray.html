@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+	<title>Astray</title>
+	<style>
+		.tren {
+    	float: left;
+    	background-color: white;
+   	 	color : black;
+    	height: 50%;
+    	width: 99.5%;
+    	border-radius: 10px;
+		border: 3px dotted #b1154a;
+		line-height: 1.4;
+  		}
+		.header {
+  		display: flex;
+  		background-color: white;
+  		width: 100%;
+  		height: 90px;
+		}
+		
+		.dangky input[type="button"] {
+  		background-color: #DD0000;
+  		color: white;
+  		height: 43px;
+  		border-radius: 10px 10px 10px 10px;
+  		outline: none;
+  		border: none;
+		}
+		.choigame input[type="button"] {
+  		background-color:#DD0000;
+  		color: white;
+  		height: 40px;
+  		outline: none;
+  		border: none;
+		border: 3px solid #b1154a;
+		}
+		.choigame input[type="button"]:hover {
+ 		background-color: #BB0000;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Chi Tiết Game" style="font-weight:bold"></center></a>
+        </div>
+		<h4><center>bạn sẽ đóng vai trò người chỉ đường để giúp nhân vật chính trong game có thể tìm ra con đường nhanh nhất thoát khỏi các mê cung rộng lớn. <br> Bạn hãy sử dụng khả năng quan sát và tính toán của mình một cách thật hợp lý để có thể đến được bên kia của của mê cung bạn nhé! <br >Game Astray với thao tác chơi hết sức đơn giản nhưng đòi hỏi bạn cần tính toán thật kĩ để tìm ra đường đi đúng nhất.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Hướng Dẫn Chơi" style="font-weight:bold"></center></a>
+        </div>
+	<h4><center>Người chơi sử dụng các phím điều hướng ( xuống lên trái phải ) để điều khiển nhân vật vượt qua được các mê cung nhằm qua màn .<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	{% if user.username %}
+	<div class="choigame">
+		<a href="/game9"><center><input type="button" name="" value="Click Để Chơi Game" style="font-weight:bold"></center></a>
+	</div>
+	{% else %}
+	<div class="choigame">
+		<center><input type="button" name="" id="btn" value="Click Để Chơi Game" style="font-weight:bold"></center>
+        <script language="javascript">
+            var button = document.getElementById("btn");
+            button.onclick = function(){
+                alert("Bạn cần có một tài khoản để chơi game !!!");
+            }
+        </script>
+	</div>
+	{% endif %}
+	
+</body>
+</html>

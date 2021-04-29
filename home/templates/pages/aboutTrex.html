@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+	<title>Trex</title>
+	<style>
+		.tren {
+    	float: left;
+    	background-color: white;
+   	 	color : black;
+    	height: 50%;
+    	width: 99.5%;
+    	border-radius: 10px;
+		border: 3px dotted #b1154a;
+		line-height: 1.4;
+  		}
+		.header {
+  		display: flex;
+  		background-color: white;
+  		width: 100%;
+  		height: 90px;
+		}
+		
+		.dangky input[type="button"] {
+  		background-color: #DD0000;
+  		color: white;
+  		height: 43px;
+  		border-radius: 10px 10px 10px 10px;
+  		outline: none;
+  		border: none;
+		}
+		.choigame input[type="button"] {
+  		background-color:#DD0000;
+  		color: white;
+  		height: 40px;
+  		outline: none;
+  		border: none;
+		border: 3px solid #b1154a;
+		}
+		.choigame input[type="button"]:hover {
+ 		background-color: #BB0000;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Chi Tiết Game" style="font-weight:bold"></center></a>
+        </div>
+		<h4><center>trò chơi T-Rex là một built-in webgame trong Google Chrome trình duyệt webTrò chơi được tạo bởi Sebastien Gabriel vào năm 2014 và có thể được truy cập bằng cách nhấn vào phím cách khi ngoại tuyến trên Google Chrome hoặc bằng cách nhập chrome: // dino hoặc chrome: // network-error / -106 vào thanh URL.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Hướng Dẫn Chơi" style="font-weight:bold"></center></a>
+        </div>
+	<h4><center>Để bắt đầu chơi game, rất đơn giản, bạn hãy nhấn phím cách, khủng long sẽ bắt đầu chạy, ban đầu có vẻ rất yên bình, nhưng ngay khi nhìn thấy những rặng cây xương rồng đang di chuyển lại gần thì bạn hãy thật tập trung.<br> Nhấn phím cách để khủng long nhảy qua cây xương rồng. Xương rồng sẽ xuất hiện càng lúc càng nhiều, bạn phải chọn thời điểm chính xác để nhấn phím cách, sớm quá hay muộn quá đều khiến chú khủng long đâm đầu vào cây xương rồng và trò chơi kết thúc.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	{% if user.username %}
+	<div class="choigame">
+		<a href="/game3"><center><input type="button" name="" value="Click Để Chơi Game" style="font-weight:bold"></center></a>
+	</div>
+	{% else %}
+	<div class="choigame">
+		<center><input type="button" name="" id="btn" value="Click Để Chơi Game" style="font-weight:bold"></center>
+        <script language="javascript">
+            var button = document.getElementById("btn");
+            button.onclick = function(){
+                alert("Bạn cần có một tài khoản để chơi game !!!");
+            }
+        </script>
+	</div>
+	{% endif %}
+	
+</body>
+</html>

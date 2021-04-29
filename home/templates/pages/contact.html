@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="/static/css/css.css" type="text/css">
+   <link rel="shortcut icon" href="/static/images/hinh2.png">
+   <title>Y9 Games</title>
+   <style>
+    .tren {
+    float: left;
+    background-color: white;
+        color : black;
+    height: 100%;
+    width: 99.5%;
+    border-radius: 10px;
+    border: 3px dotted #b1154a;
+    line-height: 1.4;
+      }
+    </style>
+ 
+</head>
+<body>
+    <header class="header">
+        <div class="header1">
+          <div class="logo">
+            <a href="/"><img src="/static/images/hinh2.png" alt="" style="width:110px ; padding-left:50px ; padding-top:0px ; padding-left:50px"></a>
+          </div>
+          <div class="mainsearch">
+            <div class="search">
+              <input type="text" name="" placeholder="Tìm kiếm trò chơi" style="font-weight:bold">
+              <button type="button" name="button"><img src="/static/images/hinh3.png" style="width:14px"></button>
+            </div>
+          </div>
+          {% if user.username %}
+          <div class="dangky">
+            <a><input type="button" name="" value="Xin chào {{user.username}}" style="font-weight:bold"></a>
+          </div>
+          <div class="dangnhap">
+            <a href="/logout"><input type="button" name="" value="Đăng xuất" style="font-weight:bold"></a>
+          </div>
+          {% else %}
+          <div class="dangky">
+            <a href="/register"><input type="button" name="" value="Đăng ký" style="font-weight:bold"></a>
+          </div>
+          <div class="dangnhap">
+            <a href="/login"><input type="button" name="" value="Đăng nhập" style="font-weight:bold"></a>
+          </div>
+          {% endif %}
+        </div>
+    </header>
+    <div class="body">
+        <div class="container">
+            <div class = "tren">
+                <div><h4><center>Y9 là một trang web chơi game miễn phí cho mọi người giải trí sau một ngày dài làm việc và học tập mệt mỏi<br> Do còn mới phát triển nên lượng game của Y9 còn khá ít ( chỉ 10 game ) nhưng cũng tạm đủ để chơi. <br> Mọi ý kiến và đóng góp xin gửi về : <br> </center></h4>
+                <ul >
+                  <li> <h4><p><a target="_blank" href="https://www.facebook.com/BlackHawk.Mr.trung">Nguyễn Thành Trung</a> ( học sinh trường THPT chuyên Lê Quý Đôn, lớp 11A1 ) email: <a href="mailto:trung9204@gmail.com">trung9204@gmail.com</a></p></h4></li>
+                  <li> <h4><p><a target="_blank" href="https://www.facebook.com/Trunggg248">Thái Thành Trung</a> ( học sinh trường THPT chuyên Lê Quý Đôn, lớp 11A1 ) email: <a href="mailto:trung2482004@gmail.com">trung2482004@gmail.com</a></p></h4></li>
+                  <h4><p>Lưu ý : Chơi game quá 180 phút sẽ gây ảnh hướng đến sức khỏe</p></h4>
+
+                </ul> 
+              </div>
+            </div>
+        </div>
+       
+    </div>
+      {% block content %}
+  
+      {% endblock %}
+</body>
+</html>

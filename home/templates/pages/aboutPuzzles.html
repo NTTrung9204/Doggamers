@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/css.css" type="text/css">
+	<title>Puzzles</title>
+	<style>
+		.tren {
+    	float: left;
+    	background-color: white;
+   	 	color : black;
+    	height: 50%;
+    	width: 99.5%;
+    	border-radius: 10px;
+		border: 3px dotted #b1154a;
+		line-height: 1.4;
+  		}
+		.header {
+  		display: flex;
+  		background-color: white;
+  		width: 100%;
+  		height: 90px;
+		}
+		
+		.dangky input[type="button"] {
+  		background-color: #DD0000;
+  		color: white;
+  		height: 43px;
+  		border-radius: 10px 10px 10px 10px;
+  		outline: none;
+  		border: none;
+		}
+		.choigame input[type="button"] {
+  		background-color:#DD0000;
+  		color: white;
+  		height: 40px;
+  		outline: none;
+  		border: none;
+		border: 3px solid #b1154a;
+		}
+		.choigame input[type="button"]:hover {
+ 		background-color: #BB0000;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Chi Tiết Game" style="font-weight:bold"></center></a>
+        </div>
+		<h4><center>Trò chơi ghép hình được ra đời không từ nhu cầu giải trí đơn thuần. Nó được phát minh vào năm 1762 bởi một giáo viên người Anh có tên là John Spilsbury .<br> Trò chơi gồm 8 cấp độ, từ 2 đến 9, càng lên cấp thì độ khó càng tăng và càng phức tạp .<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	<div class = "tren">
+		<div class="dangky">
+            <a><center><input type="button" name="" value="Hướng Dẫn Chơi" style="font-weight:bold"></center></a>
+        </div>
+	<h4><center>Người chơi dùng các phím điều khiển hướng (lên xuống trái phải) để xếp hình theo thứ tự từ số nhỏ đến số lớn theo thứ tự từ trên xuống để chiến thắng.<br></center></h4>
+	</div>
+	<div>
+		<p>&emsp;</p>
+	</div>
+	{% if user.username %}
+	<div class="choigame">
+		<a href="/game5"><center><input type="button" name="" value="Click Để Chơi Game" style="font-weight:bold"></center></a>
+	</div>
+	{% else %}
+	<div class="choigame">
+		<center><input type="button" name="" id="btn" value="Click Để Chơi Game" style="font-weight:bold"></center>
+        <script language="javascript">
+            var button = document.getElementById("btn");
+            button.onclick = function(){
+                alert("Bạn cần có một tài khoản để chơi game !!!");
+            }
+        </script>
+	</div>
+	{% endif %}
+	
+</body>
+</html>
